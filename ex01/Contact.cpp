@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
+#include <iostream>
 #include "Contact.hpp"
 
 std::string Contact::get_FirstName()
@@ -36,3 +38,18 @@ std::string Contact::get_DarkestSecret()
 {
 	return(DarkestSecret);
 }
+
+void    Contact::get_Info()
+{
+	std::cout << BLD << "Enter First Name:\n" << NRM;
+	getline(std::cin, FirstName);
+	std::cout << BLD << "Enter Last Name:\n" << NRM;
+	getline(std::cin, LastName);
+	std::cout << BLD << "Enter Nickname:\n" << NRM;
+	getline(std::cin, Nickname);
+	std::cout << BLD << "Enter Phone Number:\n" << NRM;
+	getline(std::cin, PhoneNumber);
+	std::cout << BLD << "Tell me your Darkest Secret:\n" << NRM;
+	getline(std::cin, DarkestSecret);
+}
+

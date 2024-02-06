@@ -21,7 +21,7 @@ class	PhoneBook
 private:
 	Contact::Contact list[7];
 public:
-	add_contact
+	void add_contact(position);
 };
 
 #endif

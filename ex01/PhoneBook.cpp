@@ -10,4 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
+#include "phonebook.hpp"
+
+void    add_contact(int position)
+{
+	Contact[position].get_info;
+}

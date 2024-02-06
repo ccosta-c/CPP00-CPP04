@@ -15,6 +15,11 @@
 
 #include <string>
 
+# define RED "\033[1;31m"
+# define NRM "\033[0;37m"
+# define GRN "\033[1;32m"
+# define BLD "\033[1;37m"
+
 class Contact
 {
 private:
@@ -24,11 +29,12 @@ private:
 	std::string PhoneNumber;
 	std::string DarkestSecret;
 public:
-	get_FirstName();
-	get_LastName();
-	get_NickName();
-	get_PhoneNumber();
-	get_DarkestSecret();
+	std::string get_FirstName();
+	std::string get_LastName();
+	std::string get_Nickname();
+	std::string get_PhoneNumber();
+	std::string get_DarkestSecret();
+	void get_Info();
 };
 
 #endif
