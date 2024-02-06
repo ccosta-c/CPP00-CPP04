@@ -11,23 +11,17 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include "Contact.hpp"
 
-#ifndef C00_PHONEBOOK_H
-#define C00_PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-
-class	Contact {
-	public:
-		char	FirstName;
-		char	LastName;
-		char	Nickname;
-		int		PhoneNumber;
-		char	DarkestSecret;
-};
-
-class	PhoneBook {
-	public:
-
+class	PhoneBook
+{
+private:
+	Contact::Contact list[7];
+public:
+	add_contact
 };
 
 #endif

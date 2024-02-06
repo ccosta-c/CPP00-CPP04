@@ -31,7 +31,7 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 MKFLAGS		= --no-print-directory
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ FILES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
-SRC				= 	PhoneBook.cpp
+SRC				= 	Main.cpp
 
 OBJS 			:= $(SRC:.cpp=.o)
 NAME			= phonebook
