@@ -51,6 +51,8 @@ int main(void)
 		getline(std::cin, command, '\n');
 		if (command.compare("ADD") == 0)
 		{
+			if (index == 8)
+				index = 0;
 			book.manage_contacts(index);
 			index++;
 			std::cout << GRN << "Added successfully to the phonebook!\n" << NRM;
@@ -58,6 +60,7 @@ int main(void)
 		else if (command.compare("SEARCH") == 0)
 		{
 			search_table(book);
+			std::cout << BLD << "Press any key to continue...\n" << NRM;
 			while (std::cin.get() != '\n')
 				continue;
 		}
