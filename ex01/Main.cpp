@@ -28,29 +28,31 @@ void draw_phone(void)
 	std::cout << "'88`=='-------' \n";
 }
 
-void    manage_contacts(PhoneBook book)
+void    manage_contacts(PhoneBook book, int index)
 {
-	static int index = 0;
-
 	book.add_contact(index);
-	index++;
-	if (index == 8)
+	if (index == 7)
 		index = 0;
 	std::cout << GRN << "Contact added successfully!\n"  << NRM;
 	while (std::cin.get() != '\n')
 		continue;
 }
 
-void    search_table(void)
+void    search_table(int index)
 {
-		std::cout << std::setw(10) << "Index" << "|" << std::setw(10) << "First Name" << "|" << std::setw(10) << "Last Name" << "|";
+		std::cout << std::setw(10) << "Index" << "|"
+			<< std::setw(10) << "First Name" << "|"
+			<< std::setw(10) << "Last Name" << "|"
+			<< std::setw(10) << "Nickname" << "|\n";
+		while
 }
 
 int main(void)
 {
 	std::string command;
-	Contact data;
-	PhoneBook book;
+	Contact     data;
+	PhoneBook   book;
+	int         index = 0;
 
 	while(1)
 	{
@@ -60,11 +62,12 @@ int main(void)
 		if (command.compare("ADD") == 0)
 		{
 			manage_contacts(book);
+			index++;
 			std::cout << GRN << "Added successfully to the phonebook!\n" << NRM;
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
-			search_table();
+			search_table(index);
 			std::cout << "Command SEARCH accepted!\n";
 			while (std::cin.get() != '\n')
 				continue;
