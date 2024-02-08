@@ -13,6 +13,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 #include "Contact.hpp"
 
 std::string Contact::get_FirstName()
@@ -59,16 +60,52 @@ void    Contact::print_info()
 
 void    Contact::get_Info()
 {
-	std::cout << BLD << "Enter First Name:\n" << NRM;
-	getline(std::cin, FirstName);
-	std::cout << BLD << "Enter Last Name:\n" << NRM;
-	getline(std::cin, LastName);
-	std::cout << BLD << "Enter Nickname:\n" << NRM;
-	getline(std::cin, Nickname);
-	std::cout << BLD << "Enter Phone Number:\n" << NRM;
-	getline(std::cin, PhoneNumber);
-	std::cout << BLD << "Tell me your Darkest Secret:\n" << NRM;
-	getline(std::cin, DarkestSecret);
+    do
+    {
+        draw_phone();
+        std::cout << BLD << "Enter First Name:\n" << NRM;
+        getline(std::cin, FirstName);
+    }
+    while(FirstName == "");
+    do
+    {
+        draw_phone();
+        std::cout << BLD << "Enter Last Name:\n" << NRM;
+        getline(std::cin, LastName);
+    }
+    while(LastName == "");
+    do
+    {
+        draw_phone();
+        std::cout << BLD << "Enter Nickname:\n" << NRM;
+        getline(std::cin, Nickname);
+    }
+    while(Nickname == "");
+    do
+    {
+        draw_phone();
+        std::cout << BLD << "Enter Phone Number:\n" << NRM;
+        getline(std::cin, PhoneNumber);
+    }
+    while(PhoneNumber == "");
+    do
+    {
+        draw_phone();
+        std::cout << BLD << "Tell me your Darkest Secret:\n" << NRM;
+        getline(std::cin, DarkestSecret);
+    }
+    while(DarkestSecret == "");
 }
 
+void draw_phone(void)
+{
+    system("clear");
+    std::cout << "   ,==.-------.\n";
+    std::cout << "  (    ) ====  \\   |  __ \\| |                    |  _ \\            | |   \n";
+    std::cout << "  ||  | [][][] |   | |__) | |__   ___  _ __   ___| |_) | ___   ___ | | __\n";
+    std::cout << ",8||  | [][][] |   |  ___/| '_ \\ / _ \\| '_ \\ / _ \\  _ < / _ \\ / _ \\| |/ /\n";
+    std::cout << "8 ||  | [][][] |   | |    | | | | (_) | | | |  __/ |_) | (_) | (_) |   < \n";
+    std::cout << "8 (    ) O O O /   |_|    |_| |_|\\___/|_| |_|\\___|____/ \\___/ \\___/|_|\\_\\\n";
+    std::cout << "'88`=='-------' \n";
+}
 

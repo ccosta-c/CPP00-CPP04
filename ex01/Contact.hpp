@@ -38,4 +38,6 @@ public:
 	void print_info();
 };
 
+void draw_phone(void);
+
 #endif

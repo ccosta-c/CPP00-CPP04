@@ -28,7 +28,6 @@ void    PhoneBook::print_contacts(void)
 		if(index > 7)
 			return ;
 	}
-
 }
 
 void    PhoneBook::manage_contacts(int index)

@@ -25,6 +25,7 @@ public:
 	void add_contact(int position);
 	void manage_contacts(int index);
 	void print_contacts();
+    void get_contactinfo(int index);
 };
 
 #endif
