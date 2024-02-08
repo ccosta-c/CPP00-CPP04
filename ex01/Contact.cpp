@@ -12,6 +12,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include "Contact.hpp"
 
 std::string Contact::get_FirstName()
@@ -39,6 +40,23 @@ std::string Contact::get_DarkestSecret()
 	return(DarkestSecret);
 }
 
+void    Contact::print_info()
+{
+	if (FirstName.length() > 9)
+		std::cout << FirstName.substr(0, 9) << ".|";
+	else
+		std::cout << std::setw(10) << FirstName << "|";
+	if (LastName.length() > 9)
+		std::cout << LastName.substr(0, 9) << ".|";
+	else
+		std::cout << std::setw(10) << LastName<< "|";
+	if (Nickname.length() > 9)
+		std::cout << Nickname.substr(0, 9) << ".|\n";
+	else
+		std::cout << std::setw(10) << Nickname<< "|\n";
+
+}
+
 void    Contact::get_Info()
 {
 	std::cout << BLD << "Enter First Name:\n" << NRM;
@@ -52,4 +70,5 @@ void    Contact::get_Info()
 	std::cout << BLD << "Tell me your Darkest Secret:\n" << NRM;
 	getline(std::cin, DarkestSecret);
 }
+
 

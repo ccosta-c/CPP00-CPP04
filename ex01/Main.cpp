@@ -13,8 +13,8 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 #include <cstdlib>
-#include <unistd.h>
 #include <iomanip>
+#include <unistd.h>
 
 void draw_phone(void)
 {
@@ -28,23 +28,13 @@ void draw_phone(void)
 	std::cout << "'88`=='-------' \n";
 }
 
-void    manage_contacts(PhoneBook book, int index)
+void    search_table(PhoneBook book)
 {
-	book.add_contact(index);
-	if (index == 7)
-		index = 0;
-	std::cout << GRN << "Contact added successfully!\n"  << NRM;
-	while (std::cin.get() != '\n')
-		continue;
-}
-
-void    search_table(int index)
-{
-		std::cout << std::setw(10) << "Index" << "|"
-			<< std::setw(10) << "First Name" << "|"
-			<< std::setw(10) << "Last Name" << "|"
-			<< std::setw(10) << "Nickname" << "|\n";
-		while
+	std::cout << std::setw(10) << "Index" << "|"
+	          << std::setw(10) << "First Name" << "|"
+	          << std::setw(10) << "Last Name" << "|"
+	          << std::setw(10) << "Nickname" << "|\n";
+	book.print_contacts();
 }
 
 int main(void)
@@ -61,14 +51,13 @@ int main(void)
 		getline(std::cin, command, '\n');
 		if (command.compare("ADD") == 0)
 		{
-			manage_contacts(book);
+			book.manage_contacts(index);
 			index++;
 			std::cout << GRN << "Added successfully to the phonebook!\n" << NRM;
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
-			search_table(index);
-			std::cout << "Command SEARCH accepted!\n";
+			search_table(book);
 			while (std::cin.get() != '\n')
 				continue;
 		}

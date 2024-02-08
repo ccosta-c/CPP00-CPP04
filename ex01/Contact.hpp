@@ -35,6 +35,7 @@ public:
 	std::string get_PhoneNumber();
 	std::string get_DarkestSecret();
 	void get_Info();
+	void print_info();
 };
 
 #endif

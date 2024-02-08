@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 #include "Contact.hpp"
 
 #ifndef PHONEBOOK_HPP
@@ -22,6 +23,8 @@ private:
 	Contact list[8];
 public:
 	void add_contact(int position);
+	void manage_contacts(int index);
+	void print_contacts();
 };
 
 #endif
