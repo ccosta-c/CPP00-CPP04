@@ -19,9 +19,9 @@
 class	PhoneBook
 {
 private:
-	Contact::Contact list[7];
+	Contact list[8];
 public:
-	void add_contact(position);
+	void add_contact(int position);
 };
 
 #endif

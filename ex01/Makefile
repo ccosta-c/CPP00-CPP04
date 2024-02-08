@@ -32,6 +32,7 @@ MKFLAGS		= --no-print-directory
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ FILES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
 SRC				= 	Contact.cpp \
+					PhoneBook.cpp \
 					Main.cpp
 
 OBJS 			:= $(SRC:.cpp=.o)
