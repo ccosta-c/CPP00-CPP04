@@ -14,6 +14,8 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <cstring>
+#include <iostream>
 
 # define RED "\033[1;31m"
 # define NRM "\033[0;37m"

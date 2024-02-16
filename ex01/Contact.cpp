@@ -58,6 +58,24 @@ void    Contact::print_info()
 
 }
 
+bool hasOnlyNumbers(std::string str)
+{
+	std::string numbers;
+	int         num_found;
+
+	numbers = "0123456789";
+	num_found = strspn(str.c_str(), numbers.c_str());
+	if (num_found == (int)str.length())
+		return (true);
+	else
+		return (false);
+}
+
+bool hasOnlyWhitespace(std::string str)
+{
+	return (str.find_first_not_of(" \t\n\r\v\f") == std::string::npos);
+}
+
 void    Contact::get_Info()
 {
     do
@@ -66,35 +84,35 @@ void    Contact::get_Info()
         std::cout << BLD << "Enter First Name:\n" << NRM;
         getline(std::cin, FirstName);
     }
-    while(FirstName == "");
+    while(hasOnlyWhitespace(FirstName));
     do
     {
         draw_phone();
         std::cout << BLD << "Enter Last Name:\n" << NRM;
         getline(std::cin, LastName);
     }
-    while(LastName == "");
+    while(hasOnlyWhitespace(LastName));
     do
     {
         draw_phone();
         std::cout << BLD << "Enter Nickname:\n" << NRM;
         getline(std::cin, Nickname);
     }
-    while(Nickname == "");
+    while(hasOnlyWhitespace(Nickname));
     do
     {
         draw_phone();
         std::cout << BLD << "Enter Phone Number:\n" << NRM;
         getline(std::cin, PhoneNumber);
     }
-    while(PhoneNumber == "");
+    while(hasOnlyWhitespace(PhoneNumber) || !(hasOnlyNumbers(PhoneNumber)));
     do
     {
         draw_phone();
         std::cout << BLD << "Tell me your Darkest Secret:\n" << NRM;
         getline(std::cin, DarkestSecret);
     }
-    while(DarkestSecret == "");
+    while(hasOnlyWhitespace(DarkestSecret));
 }
 
 void draw_phone(void)

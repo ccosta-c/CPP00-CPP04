@@ -13,17 +13,47 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 #include <cstdlib>
-#include <iomanip>
 #include <unistd.h>
 
 
+void    index_prompt(PhoneBook book)
+{
+    std::string input;
+    int         input_num;
+
+	std::cout << BLD << "Choose index to show more info or type EXIT to go back...\n" << NRM;
+    while(1)
+    {
+	    std::cin >> input;
+        if (input == "EXIT")
+            break;
+        input_num = atoi(input.c_str());
+		if (input_num == 0 && (input.compare("0") != 0))
+		{
+			draw_phone();
+			book.print_contacts();
+			std::cout << RED << "Invalid Input, please try again...\n" << NRM;
+		}
+        else if(((book.check_existence(input_num)).empty() == false))
+		{
+			draw_phone();
+			book.get_contactinfo(input_num);
+			return ;
+		}
+		else
+		{
+			draw_phone();
+			book.print_contacts();
+			std::cout << RED << "Invalid Input, please try again...\n" << NRM;
+		}
+    }
+}
+
 void    search_table(PhoneBook book)
 {
-	std::cout << std::setw(10) << "Index" << "|"
-	          << std::setw(10) << "First Name" << "|"
-	          << std::setw(10) << "Last Name" << "|"
-	          << std::setw(10) << "Nickname" << "|\n";
+	draw_phone();
 	book.print_contacts();
+    index_prompt(book);
 }
 
 int main(void)
