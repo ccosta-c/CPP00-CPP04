@@ -31,11 +31,10 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 MKFLAGS		= --no-print-directory
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ FILES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
-SRC				=	Account.cpp \
-					tests.cpp
+SRC				=	Account.cpp tests.cpp
 
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= phonebook
+NAME			= bank
 TARGET			= $(OBJS)
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ RULES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
