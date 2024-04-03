@@ -31,10 +31,9 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 MKFLAGS		= --no-print-directory
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ FILES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
-SRC				= 	main.cpp
-
+SRC				= 	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= RefStrPtr
+NAME			= Weapons
 TARGET			= $(OBJS)
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ RULES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
