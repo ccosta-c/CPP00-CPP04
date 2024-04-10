@@ -1,6 +1,5 @@
 
 #include <iostream>
-#include <string>
 #include <fstream>
 
 void checkReplace(std::string &line, std::string s1, std::string s2)
