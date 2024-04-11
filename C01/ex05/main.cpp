@@ -8,4 +8,6 @@ int main(int argc, char **argv)
 		Harl harlinho;
 		harlinho.complain(argv[1]);
 	}
+	else
+		std::cout << "Please insert a valid word: DEBUG, INFO, WARNING, ERROR\n";
 }

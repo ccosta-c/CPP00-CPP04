@@ -15,7 +15,7 @@ void Zombie::newZombie(std::string x)
 	this->name = x;
 }
 
-std::string Zombie::Get_Name ( void )
+std::string Zombie::getName ( void )
 {
 	return (name);
 }
