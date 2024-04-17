@@ -11,6 +11,8 @@ class Fixed {
 	Fixed();
 	Fixed(Fixed& copy);
 	~Fixed();
+	Fixed& operator=(const Fixed& values);
+
 };
 
 

@@ -9,5 +9,5 @@ int main(int argc, char **argv)
 		harlinho.complain(argv[1]);
 	}
 	else
-		std::cout << "Please insert a valid word: DEBUG, INFO, WARNING, ERROR\n";
+		std::cout << "Please insert a valid word: DEBUG, INFO, WARNING, ERROR.\n";
 }

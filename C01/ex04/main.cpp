@@ -4,10 +4,14 @@
 
 void checkReplace(std::string &line, std::string s1, std::string s2)
 {
-	for (unsigned long found = 0; found != line.npos; (found = line.find(s1)))
+	while (line.find(s1) != line.npos)
 	{
+		unsigned long found = line.find(s1);
+		if (found != line.npos)
+		{
 			line.erase(found, s1.length());
 			line.insert(found, s2);
+		}
 	}
 }
 
@@ -18,12 +22,12 @@ int main(int argc, char **argv)
 		std::ifstream OGfile(argv[1]);
 		std::string outName = argv[1];
 		outName.append(".replace");
-		std::ofstream outFile(outName.c_str());
 		if(OGfile.is_open() == 0)
 		{
 			std::cout << "Error opening the file!\n";
 			return(-1);
 		}
+		std::ofstream outFile(outName.c_str());
 		std::string line;
 		while (getline(OGfile, line))
 		{

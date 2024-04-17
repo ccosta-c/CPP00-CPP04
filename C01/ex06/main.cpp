@@ -36,5 +36,5 @@ int main(int argc, char **argv)
 			switchFunction(harlinho, 4);
 	}
 	else
-		std::cout << "Wrong number of arguments (just need one).\n";
+		std::cout << "Wrong number of arguments (one argument needed).\n";
 }
