@@ -42,23 +42,19 @@ Fixed& Fixed::operator=(const Fixed& data)
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called\n";
+	//std::cout << "getRawBits member function called\n";
 	return(_number);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called\n";
+	//std::cout << "setRawBits member function called\n";
 	_number = raw;
 }
 
 float Fixed::toFloat( void ) const
 {
-	float ret;
-
-	std::cout << "toFloat member function called\n";
-	ret = _number / (1 << _decimal);
-	return (ret);
+	return (static_cast<float>(_number) / (1 << _decimal));
 }
 
 int Fixed::toInt( void ) const
