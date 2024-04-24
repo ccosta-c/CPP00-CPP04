@@ -22,6 +22,7 @@ int main( void )
 	std::cout << "Different than operator " << "(" << a << " != " << c << "): " << (a != c) << std::endl;
 	std::cout << "pre-increment, value before " << a << "\nvalue after " << ++a << std::endl;
 	std::cout << "post-increment, value before " << a << "\nvalue after " << a++ << "\naccess to the value " << a << std::endl;
+	std::cout << ""
 }
 
 //int main( void )
