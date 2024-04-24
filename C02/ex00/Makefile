@@ -33,7 +33,7 @@ MKFLAGS		= --no-print-directory
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ FILES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
 SRC				= 	Fixed.cpp main.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= numbers
+NAME			= numbersZero
 TARGET			= $(OBJS)
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ RULES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
