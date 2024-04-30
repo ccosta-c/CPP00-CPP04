@@ -1,15 +1,18 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::Cla
-
 ClapTrap::ClapTrap(std::string name)
 {
 	_name = name;
 	_hitPoints = 10;
 	_energyPoints = 10;
 	_attackDamage = 0;
-	std::cout << "Fresh off the assembly line, " GRN << _name << NRM " spurs to life!" << std::endl;
+	std::cout << "Fresh off the assembly line, " << GRN << " Claptrap " << _name << NRM " spurs to life!" << std::endl;
+}
+
+ClapTrap::ClapTrap()
+{
+	std::cout << "New model of a Claptrap has appeared!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap& copy)
@@ -31,7 +34,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &values)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << GRN << _name << NRM << " gets wiped out of existence." << std::endl;
+	std::cout << GRN << "ClapTrap " << _name << NRM << " gets wiped out of existence." << std::endl;
 }
 
 std::string ClapTrap::getName() const
