@@ -4,4 +4,5 @@
 int main (void)
 {
 	ScavTrap Joe("Joe");
+	Joe.guardGate();
 }

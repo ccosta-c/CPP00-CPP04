@@ -12,10 +12,6 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap()
 {
-	_name = "NULL";
-	_hitPoints = 0;
-	_energyPoints = 0;
-	_attackDamage = 0;
 	std::cout << "New model of a " << GRN << " ClapTrap " << NRM << "has appeared!" << std::endl;
 }
 
