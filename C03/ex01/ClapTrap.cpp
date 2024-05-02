@@ -90,5 +90,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 		<< NRM << " points, to a total of " CYAN << _hitPoints << NRM << "!" << std::endl;
 	}
 	else
-		std::cout << "Autorepair circuits flicker. Not enough juice. " << _name << " can't be fixed." << std::endl;
+		std::cout << "Auto-repair circuits flicker. Not enough juice. " << _name << " can't be fixed." << std::endl;
 }

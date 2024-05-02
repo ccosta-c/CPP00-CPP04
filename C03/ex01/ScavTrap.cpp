@@ -7,7 +7,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap()
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-	std::cout << "Fresh off the assembly line, " << GRN << " Scavtrap " << _name << NRM " spurs to life!" << std::endl;
+	std::cout << "Fresh off the assembly line, " << GRN << " ScavTrap " << _name << NRM " spurs to life!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap &copy)

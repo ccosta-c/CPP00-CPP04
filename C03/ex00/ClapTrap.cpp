@@ -1,8 +1,6 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::Cla
-
 ClapTrap::ClapTrap(std::string name)
 {
 	_name = name;
@@ -58,8 +56,8 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (_energyPoints > 0 && _hitPoints > 0)
 	{
-		std::cout << "ClapTrap " << GRN << _name << NRM << " attacks " << GRN << target << NRM <<" , causing " << RED << _attackDamage << NRM << " of damage!" << std::endl;
 		_energyPoints--;
+		std::cout << "ClapTrap " << GRN << _name << NRM << " attacks " << GRN << target << NRM <<" , causing " << RED << _attackDamage << NRM << " of damage!" << std::endl;
 	}
 	else
 		std::cout << "ClapTrap " << _name << " aims at " << target << " , hand shaking. Their attack fizzles. Out of juice." << std::endl;
@@ -83,5 +81,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 		<< NRM << " points, to a total of " CYAN << _hitPoints << NRM << "!" << std::endl;
 	}
 	else
-		std::cout << "Autorepair circuits flicker. Not enough juice. " << _name << " can't be fixed." << std::endl;
+		std::cout << "Auto-repair circuits flicker. Not enough juice. " << _name << " can't be fixed." << std::endl;
 }
