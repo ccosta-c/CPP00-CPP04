@@ -34,21 +34,22 @@ Fixed::~Fixed ( void )
 
 Fixed& Fixed::operator=(const Fixed& data)
 {
-	if (this != &data)
-		this->_number = data.getRawBits();
 	std::cout << "Copy Assignment Overload called\n";
+	if (this != &data) {
+		this->_number = data.getRawBits();
+	}
 	return (*this);
 }
 
 int Fixed::getRawBits( void ) const
 {
-	//std::cout << "getRawBits member function called\n";
+	std::cout << "getRawBits member function called\n";
 	return(_number);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	//std::cout << "setRawBits member function called\n";
+	std::cout << "setRawBits member function called\n";
 	_number = raw;
 }
 
