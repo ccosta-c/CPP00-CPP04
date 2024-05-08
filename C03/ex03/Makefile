@@ -31,9 +31,9 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 MKFLAGS		= --no-print-directory
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ FILES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
-SRC				= 	ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
+SRC				= 	ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= FragTrap
+NAME			= DiamondTrap
 TARGET			= $(OBJS)
 
 #_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ RULES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_

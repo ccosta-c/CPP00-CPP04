@@ -28,10 +28,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &values)
 {
 	if (this != &values)
 	{
-		_name = values.getName();
-		_hitPoints = values.getHitPoints();
-		_energyPoints = values.getEnergyPoints();
-		_attackDamage = values.getAttackDamage();
+		_name = values._name;
+		_hitPoints = values._hitPoints;
+		_energyPoints = values._energyPoints;
+		_attackDamage = values._attackDamage;
 	}
 	return (*this);
 }

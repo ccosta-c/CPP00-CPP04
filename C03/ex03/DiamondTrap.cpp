@@ -16,3 +16,24 @@ DiamondTrap::DiamondTrap(DiamondTrap &copy)
 	*this = copy;
 }
 
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &values)
+{
+	if (this != &values)
+	{
+		_name = values._name;
+		_hitPoints = values._hitPoints;
+		_energyPoints = values._energyPoints;
+		_attackDamage = values._attackDamage;
+	}
+	return (*this);
+}
+
+DiamondTrap::~DiamondTrap()
+{
+}
+
+void DiamondTrap::whoAmI()
+{
+	std::cout << "Name of DiamondTrap: " << this->_name << std::endl;
+	std::cout << "Name of ClapTrap: " << ClapTrap::_name << std::endl;
+}

@@ -1,8 +1,11 @@
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main (void)
 {
-	FragTrap Joe("Joe");
+	DiamondTrap Joe("Joe");
+	ClapTrap TARGET("Target");
 	Joe.highFivesGuys();
+	Joe.attack("Target");
+	Joe.whoAmI();
 }

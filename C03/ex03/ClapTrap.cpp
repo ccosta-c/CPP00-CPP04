@@ -61,11 +61,11 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (_energyPoints > 0 && _hitPoints > 0)
 	{
-		std::cout << "ClapTrap " << GRN << _name << NRM << " attacks " << GRN << target << NRM <<" , causing " << RED << _attackDamage << NRM << " of damage!" << std::endl;
+		std::cout << "ClapTrap " << GRN << _name << NRM << " attacks " << RED << target << NRM <<" , causing " << RED << _attackDamage << NRM << " of damage!" << std::endl;
 		_energyPoints--;
 	}
 	else
-		std::cout << "ClapTrap " << _name << " aims at " << target << " , hand shaking. Their attack fizzles. Out of juice." << std::endl;
+		std::cout << GRN << "ClapTrap " << _name << NRM << " aims at " << RED << target << NRM << ", hand shaking. Their attack fizzles. Out of juice." << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -86,5 +86,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 		<< NRM << " points, to a total of " CYAN << _hitPoints << NRM << "!" << std::endl;
 	}
 	else
-		std::cout << "Autorepair circuits flicker. Not enough juice. " << _name << " can't be fixed." << std::endl;
+		std::cout << "Autorepair circuits flicker. Not enough juice. " << GRN << _name << NRM << " can't be fixed." << std::endl;
 }

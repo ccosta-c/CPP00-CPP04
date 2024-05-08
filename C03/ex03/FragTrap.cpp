@@ -27,10 +27,10 @@ FragTrap &FragTrap::operator=(const FragTrap &values)
 {
 	if (this != &values)
 	{
-		_name = values.getName();
-		_hitPoints = values.getHitPoints();
-		_energyPoints = values.getEnergyPoints();
-		_attackDamage = values.getAttackDamage();
+		_name = values._name;
+		_hitPoints = values._hitPoints;
+		_energyPoints = values._energyPoints;
+		_attackDamage = values._attackDamage;
 	}
 	return (*this);
 }
@@ -42,5 +42,5 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << GRN << "FragTrap " << _name << NRM << " tries to " << CYAN << " highfive the guys" << NRM << std::endl;
+	std::cout << GRN << "FragTrap " << _name << NRM << " tries to " << CYAN << " highfive the guys!" << NRM << std::endl;
 }

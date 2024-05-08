@@ -4,7 +4,8 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap : public ScavTrap {
+class FragTrap : virtual public ScavTrap
+{
   private:
   public:
 	FragTrap();
