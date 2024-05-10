@@ -13,6 +13,7 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::ClapTrap(ClapTrap& copy)
 {
 	*this = copy;
+	std::cout << GRN << _name << NRM "gets cloned!" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &values)
