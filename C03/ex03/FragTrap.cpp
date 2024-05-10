@@ -21,6 +21,7 @@ FragTrap::FragTrap(std::string name)
 FragTrap::FragTrap(FragTrap &copy)
 {
 	*this = copy;
+	std::cout << GRN << "FragTrap" << _name << NRM "gets cloned!" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &values)

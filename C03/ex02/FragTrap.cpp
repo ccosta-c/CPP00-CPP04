@@ -16,7 +16,7 @@ FragTrap::FragTrap(std::string name)
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
-	std::cout << "Fresh off the assembly line, " << GRN << " FragTrap " << _name << NRM " spurs to life!" << std::endl;
+	std::cout << "Fresh off the assembly line, " << GRN << "FragTrap " << _name << NRM " spurs to life!" << std::endl;
 }
 FragTrap::FragTrap(FragTrap &copy)
 {
@@ -42,5 +42,5 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << GRN << "FragTrap " << _name << NRM << " tries to " << CYAN << " highfive the guys" << NRM << std::endl;
+	std::cout << GRN << "FragTrap " << _name << NRM << " tries to " << CYAN << " high-five the guys!" << NRM << std::endl;
 }

@@ -14,6 +14,7 @@ DiamondTrap::DiamondTrap(std::string name)
 DiamondTrap::DiamondTrap(DiamondTrap &copy)
 {
 	*this = copy;
+	std::cout << GRN << "DiamondTrap" << _name << NRM "gets cloned!" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &values)
@@ -30,6 +31,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &values)
 
 DiamondTrap::~DiamondTrap()
 {
+	std::cout << GRN << "DiamondTrap " << _name << NRM << " gets wiped out of existence." << std::endl;
 }
 
 void DiamondTrap::whoAmI()

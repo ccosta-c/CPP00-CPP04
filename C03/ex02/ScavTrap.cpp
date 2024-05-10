@@ -41,6 +41,17 @@ ScavTrap::~ScavTrap()
 	std::cout << GRN << "ScavTrap " << _name << NRM << " gets wiped out of existence." << std::endl;
 }
 
+void ScavTrap::attack(const std::string& target)
+{
+	if (_energyPoints > 0 && _hitPoints > 0)
+	{
+		std::cout << GRN << "ScavTrap " << _name << NRM << " attacks " << GRN << target << NRM <<" , causing " << RED << _attackDamage << NRM << " of damage!" << std::endl;
+		_energyPoints--;
+	}
+	else
+		std::cout << "ScavTrap " << _name << " aims at " << target << " , hand shaking. Their attack fizzles. Out of juice." << std::endl;
+}
+
 void ScavTrap::guardGate()
 {
 	std::cout << GRN << "ScavTrap " << _name << NRM << " is now on " << CYAN << " Guard Gate Mode!" << NRM << std::endl;
