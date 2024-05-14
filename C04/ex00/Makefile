@@ -64,4 +64,8 @@ fclean: clean
 
 re: fclean all
 
+go: re
+	clear -x
+	./$(NAME)
+
 .SILENT:

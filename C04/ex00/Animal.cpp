@@ -4,11 +4,13 @@
 Animal::Animal()
 {
 	type = "Undefined";
+	std::cout << GRN << type << NRM << " has been created." << std::endl;
 }
 
 Animal::Animal(Animal &copy)
 {
 	*this = copy;
+	std::cout << GRN << this->getType() << NRM << " gets cloned!" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal &values)
@@ -22,6 +24,7 @@ Animal& Animal::operator=(const Animal &values)
 
 Animal::~Animal()
 {
+	std::cout << GRN << type << NRM << " has been destroyed." << std::endl;
 }
 
 std::string Animal::getType() const
