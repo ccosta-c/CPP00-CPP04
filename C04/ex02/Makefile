@@ -34,7 +34,7 @@ MKFLAGS		= --no-print-directory
 #=================================DIRECTORIES===================================
 SRC_DIR	= ./srcs/
 OBJ_DIR = ./objs/
-LIBRARIES = -I ./libraries/
+HEADERS = -I ./headers/
 
 #====================================FILES======================================
 SRC				= 	main.cpp Animal.cpp Brains.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
@@ -49,7 +49,7 @@ all: $(NAME)
 
 $(NAME): $(COBJS)
 
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(COBJS) $(LIBRARIES)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(COBJS) $(HEADERS)
 
 	echo "$(GREEN)  _____                   _ ";
 	echo " |  __ \                 | |";
@@ -60,7 +60,7 @@ $(NAME): $(COBJS)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
 	echo "[$(CYAN)Compiling$(RESET)] $(CXXFLAGS) $(GREEN)$<$(RESET)"
-	$(CXX) $(CXXFLAGS) -c $< -o $@ $(LIBRARIES)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ $(HEADERS)
 
 clean:
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)*/*.o$(RESET)"

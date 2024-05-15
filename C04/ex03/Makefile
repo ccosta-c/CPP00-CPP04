@@ -34,12 +34,12 @@ MKFLAGS		= --no-print-directory
 #=================================DIRECTORIES===================================
 SRC_DIR	= ./srcs/
 OBJ_DIR = ./objs/
-LIBRARIES = -I ./libraries/
+HEADERS = -I ./libraries/
 
 #====================================FILES======================================
 SRC				= 	main.cpp AMateria.cpp ICharacter.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= Abstract
+NAME			= Interfaces
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
 COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 
@@ -49,7 +49,7 @@ all: $(NAME)
 
 $(NAME): $(COBJS)
 
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ) $(INCLUDE)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ) $(HEADERS)
 
 	echo "$(GREEN)  _____                   _ ";
 	echo " |  __ \                 | |";
