@@ -3,7 +3,7 @@
 
 Animal::Animal()
 {
-	type = "Undefined";
+	type = "Undef Animal";
 	std::cout << GRN << type << NRM << " has been created." << std::endl;
 }
 

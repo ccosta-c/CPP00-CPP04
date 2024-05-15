@@ -4,11 +4,13 @@
 Dog::Dog()
 {
 	type = "Dog";
+	std::cout << GRN << type << NRM << " has been created." << std::endl;
 }
 
 Dog::Dog(Dog &copy)
 {
 	*this = copy;
+	std::cout << GRN << this->getType() << NRM << " gets cloned!" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &values)
@@ -22,6 +24,7 @@ Dog& Dog::operator=(const Dog &values)
 
 Dog::~Dog()
 {
+	std::cout << GRN << type << NRM << " has been destroyed." << std::endl;
 }
 
 std::string Dog::getType() const

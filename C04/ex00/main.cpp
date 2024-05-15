@@ -5,10 +5,12 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main() {
-	WrongAnimal *meta = new WrongAnimal();
-	const Animal *j = new Dog();
-	const WrongAnimal *i = new WrongCat();
+int main()
+{
+	std::cout << CYAN << "------------Subject Tests-------------" << NRM << std::endl;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
@@ -17,4 +19,5 @@ int main() {
 	delete meta;
 	delete j;
 	delete i;
+	std::cout << CYAN << "----------------My Tests----------------" << NRM << std::endl;
 }
