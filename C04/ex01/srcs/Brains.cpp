@@ -1,5 +1,5 @@
 
-#include "Brains.hpp"
+#include "../headers/Brains.hpp"
 
 Brains::Brains()
 {

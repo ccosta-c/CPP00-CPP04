@@ -1,5 +1,5 @@
 
-#include "WrongCat.hpp"
+#include "../headers/WrongCat.hpp"
 
 WrongCat::WrongCat()
 {

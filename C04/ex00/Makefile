@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-#_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ COLORS _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
+#====================================COLORS=====================================
 RESET	= \033[0m
 BLACK 	= \033[1;30m
 RED 	= \033[1;31m
@@ -21,27 +21,35 @@ PURPLE 	= \033[1;35m
 CYAN 	= \033[1;36m
 WHITE 	= \033[1;37m
 
-#_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ COMMANDS _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
+#===================================COMMANDS====================================
 CXX = c++
-RM = rm -f
+RM = rm -rf
 AR = ar -rcs
 
-#_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ FLAGS _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
+#====================================FLAGS======================================
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 MKFLAGS		= --no-print-directory
 
-#_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ FILES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
-SRC				= 	Animal.cpp Cat.cpp Dog.cpp main.cpp WrongCat.cpp WrongAnimal.cpp
-OBJS 			:= $(SRC:.cpp=.o)
-NAME			= Animals
-TARGET			= $(OBJS)
 
-#_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_ RULES _/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_/=\_
+#=================================DIRECTORIES===================================
+SRC_DIR	= ./srcs/
+OBJ_DIR = ./objs/
+HEADERS = -I ./headers/
+
+#====================================FILES======================================
+SRC				= 	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+OBJS 			:= $(SRC:.cpp=.o)
+NAME			= Animal
+COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
+COSRC			= $(addprefix $(SRC_DIR), $(SRC))
+
+
+#====================================RULES======================================
 all: $(NAME)
 
-$(NAME): $(TARGET)
+$(NAME): $(COBJS)
 
-	$(CXX) $(CXXFLAGS) $(TARGET) -o $(NAME)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(COBJS) $(HEADERS)
 
 	echo "$(GREEN)  _____                   _ ";
 	echo " |  __ \                 | |";
@@ -50,17 +58,20 @@ $(NAME): $(TARGET)
 	echo " | |__| | (_) | | | |  __/_|";
 	echo " |_____/ \___/|_| |_|\___(_)";
 
-%.o : %.c
+$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
 	echo "[$(CYAN)Compiling$(RESET)] $(CXXFLAGS) $(GREEN)$<$(RESET)"
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@ $(HEADERS)
 
 clean:
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)*/*.o$(RESET)"
-	$(RM) $(OBJS)
+	$(RM) $(OBJS_DIR)
 
 fclean: clean
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)$(NAME)$(RESET)"
 	$(RM) $(NAME)
+
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
 
 re: fclean all
 

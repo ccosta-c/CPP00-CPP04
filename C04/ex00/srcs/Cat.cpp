@@ -1,19 +1,19 @@
 
-#include "Dog.hpp"
+#include "../headers/Cat.hpp"
 
-Dog::Dog()
+Cat::Cat()
 {
-	type = "Dog";
+	type = "Cat";
 	std::cout << GRN << type << NRM << " has been created." << std::endl;
 }
 
-Dog::Dog(Dog &copy)
+Cat::Cat(Cat &copy)
 {
 	*this = copy;
 	std::cout << GRN << this->getType() << NRM << " gets cloned!" << std::endl;
 }
 
-Dog& Dog::operator=(const Dog &values)
+Cat& Cat::operator=(const Cat &values)
 {
 	if (this != &values)
 	{
@@ -22,17 +22,17 @@ Dog& Dog::operator=(const Dog &values)
 	return(*this);
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
 	std::cout << GRN << type << NRM << " has been destroyed." << std::endl;
 }
 
-std::string Dog::getType() const
+std::string Cat::getType() const
 {
 	return (type);
 }
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-	std::cout << "* OOOOFF OOOOOFFF *" << std::endl;
+	std::cout << "* Miau Miau *" << std::endl;
 }

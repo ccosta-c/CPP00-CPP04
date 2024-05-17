@@ -1,19 +1,19 @@
 
-#include "Cat.hpp"
+#include "../headers/Animal.hpp"
 
-Cat::Cat()
+Animal::Animal()
 {
-	type = "Cat";
+	type = "Undef Animal";
 	std::cout << GRN << type << NRM << " has been created." << std::endl;
 }
 
-Cat::Cat(Cat &copy)
+Animal::Animal(Animal &copy)
 {
 	*this = copy;
 	std::cout << GRN << this->getType() << NRM << " gets cloned!" << std::endl;
 }
 
-Cat& Cat::operator=(const Cat &values)
+Animal& Animal::operator=(const Animal &values)
 {
 	if (this != &values)
 	{
@@ -22,17 +22,16 @@ Cat& Cat::operator=(const Cat &values)
 	return(*this);
 }
 
-Cat::~Cat()
+Animal::~Animal()
 {
 	std::cout << GRN << type << NRM << " has been destroyed." << std::endl;
 }
 
-std::string Cat::getType() const
+std::string Animal::getType() const
 {
 	return (type);
 }
-
-void Cat::makeSound() const
+void Animal::makeSound() const
 {
-	std::cout << "* Miau Miau *" << std::endl;
+	std::cout << "* Strange Animal Noises *" << std::endl;
 }

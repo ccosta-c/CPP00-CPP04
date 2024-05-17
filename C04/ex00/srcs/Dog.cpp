@@ -1,19 +1,19 @@
 
-#include "Animal.hpp"
+#include "../headers/Dog.hpp"
 
-Animal::Animal()
+Dog::Dog()
 {
-	type = "Undef Animal";
+	type = "Dog";
 	std::cout << GRN << type << NRM << " has been created." << std::endl;
 }
 
-Animal::Animal(Animal &copy)
+Dog::Dog(Dog &copy)
 {
 	*this = copy;
 	std::cout << GRN << this->getType() << NRM << " gets cloned!" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal &values)
+Dog& Dog::operator=(const Dog &values)
 {
 	if (this != &values)
 	{
@@ -22,16 +22,17 @@ Animal& Animal::operator=(const Animal &values)
 	return(*this);
 }
 
-Animal::~Animal()
+Dog::~Dog()
 {
 	std::cout << GRN << type << NRM << " has been destroyed." << std::endl;
 }
 
-std::string Animal::getType() const
+std::string Dog::getType() const
 {
 	return (type);
 }
-void Animal::makeSound() const
+
+void Dog::makeSound() const
 {
-	std::cout << "* Strange Animal Noises *" << std::endl;
+	std::cout << "* OOOOFF OOOOOFFF *" << std::endl;
 }

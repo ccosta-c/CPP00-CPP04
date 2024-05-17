@@ -1,5 +1,5 @@
 
-#include "Animal.hpp"
+#include "../headers/Animal.hpp"
 
 Animal::Animal()
 {

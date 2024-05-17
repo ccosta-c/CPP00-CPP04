@@ -1,5 +1,5 @@
 
-#include "Dog.hpp"
+#include "../headers/Dog.hpp"
 
 Dog::Dog()
 {

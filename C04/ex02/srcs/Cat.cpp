@@ -1,5 +1,5 @@
 
-#include "Cat.hpp"
+#include "../headers/Cat.hpp"
 
 Cat::Cat()
 {
