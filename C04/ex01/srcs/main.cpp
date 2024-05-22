@@ -7,6 +7,14 @@
 
 int main()
 {
+	Dog *one = new Dog();
+	Dog *two = new Dog();
+	*two = *one; // will make a deep copy
+	std::cout << &one << "    " << &two << std::endl;
+	std::cout << &one->_brain << "    " << &two->_brain << std::endl;
+	delete one;
+	delete two;
+
 	Animal* array[4];
 	int iter = 0;
 	while(iter <= 1)

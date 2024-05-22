@@ -48,7 +48,6 @@ COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 all: $(NAME)
 
 $(NAME): $(COBJS)
-
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(COBJS) $(HEADERS)
 
 	echo "$(GREEN)  _____                   _ ";
@@ -62,16 +61,18 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
 	echo "[$(CYAN)Compiling$(RESET)] $(CXXFLAGS) $(GREEN)$<$(RESET)"
 	$(CXX) $(CXXFLAGS) -c $< -o $@ $(HEADERS)
 
+$(COBJS): | $(OBJ_DIR)
+
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
+
 clean:
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)*/*.o$(RESET)"
-	$(RM) $(OBJS_DIR)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)$(NAME)$(RESET)"
 	$(RM) $(NAME)
-
-$(OBJ_DIR):
-	mkdir $(OBJ_DIR)
 
 re: fclean all
 

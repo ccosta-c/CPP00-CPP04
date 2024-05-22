@@ -23,7 +23,7 @@ WHITE 	= \033[1;37m
 
 #===================================COMMANDS====================================
 CXX = c++
-RM = rm -f
+RM = rm -rf
 AR = ar -rcs
 
 #====================================FLAGS======================================
@@ -34,12 +34,12 @@ MKFLAGS		= --no-print-directory
 #=================================DIRECTORIES===================================
 SRC_DIR	= ./srcs/
 OBJ_DIR = ./objs/
-HEADERS = -I ./libraries/
+HEADERS = -I ./headers/
 
 #====================================FILES======================================
-SRC				= 	main.cpp AMateria.cpp ICharacter.cpp
+SRC				= 	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brains.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= Interfaces
+NAME			= Brains
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
 COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 
@@ -48,8 +48,7 @@ COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 all: $(NAME)
 
 $(NAME): $(COBJS)
-
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ) $(HEADERS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(COBJS) $(HEADERS)
 
 	echo "$(GREEN)  _____                   _ ";
 	echo " |  __ \                 | |";
@@ -60,11 +59,16 @@ $(NAME): $(COBJS)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
 	echo "[$(CYAN)Compiling$(RESET)] $(CXXFLAGS) $(GREEN)$<$(RESET)"
-	$(CXX) $(CXXFLAGS) -c $< -o $@ $(INCLUDE)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ $(HEADERS)
+
+$(COBJS): | $(OBJ_DIR)
+
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
 
 clean:
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)*/*.o$(RESET)"
-	$(RM) $(OBJS)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)$(NAME)$(RESET)"

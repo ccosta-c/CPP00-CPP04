@@ -24,7 +24,7 @@ Animal& Animal::operator=(const Animal &values)
 
 Animal::~Animal()
 {
-	std::cout << GRN << type << NRM << " has been destroyed." << std::endl;
+	std::cout << GRN << "Animal " << type << NRM << " has been destroyed." << std::endl;
 }
 
 std::string Animal::getType() const

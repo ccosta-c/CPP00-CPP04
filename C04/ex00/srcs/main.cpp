@@ -19,5 +19,13 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
-	std::cout << CYAN << "----------------My Tests----------------" << NRM << std::endl;
+	std::cout << CYAN << "----------------WrongAnimal Tests----------------" << NRM << std::endl;
+	const WrongAnimal* undanimal = new WrongAnimal();
+	const WrongAnimal* catvar = new WrongCat();
+	std::cout << undanimal->getType() << " " << std::endl;
+	std::cout << catvar->getType() << " " << std::endl;
+	undanimal->makeSound(); //will output the cat sound!
+	catvar->makeSound();
+	delete undanimal;
+	delete catvar;
 }

@@ -1,14 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ccosta-c <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/04 12:04:13 by ccosta-c          #+#    #+#              #
-#    Updated: 2023/07/04 12:04:16 by ccosta-c         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
 #====================================COLORS=====================================
 RESET	= \033[0m
@@ -23,7 +12,7 @@ WHITE 	= \033[1;37m
 
 #===================================COMMANDS====================================
 CXX = c++
-RM = rm -rf
+RM = rm -f
 AR = ar -rcs
 
 #====================================FLAGS======================================
@@ -37,9 +26,9 @@ OBJ_DIR = ./objs/
 HEADERS = -I ./headers/
 
 #====================================FILES======================================
-SRC				= 	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brains.cpp
+SRC				= 	main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= Abstract
+NAME			= Interfaces
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
 COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 
@@ -48,6 +37,7 @@ COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 all: $(NAME)
 
 $(NAME): $(COBJS)
+
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(COBJS) $(HEADERS)
 
 	echo "$(GREEN)  _____                   _ ";
@@ -61,14 +51,9 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
 	echo "[$(CYAN)Compiling$(RESET)] $(CXXFLAGS) $(GREEN)$<$(RESET)"
 	$(CXX) $(CXXFLAGS) -c $< -o $@ $(HEADERS)
 
-$(COBJS): | $(OBJ_DIR)
-
-$(OBJ_DIR):
-	mkdir $(OBJ_DIR)
-
 clean:
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)*/*.o$(RESET)"
-	$(RM) $(OBJ_DIR)
+	$(RM) $(OBJS)
 
 fclean: clean
 	echo "[$(RED) Deleted $(RESET)] $(GREEN)$(NAME)$(RESET)"
