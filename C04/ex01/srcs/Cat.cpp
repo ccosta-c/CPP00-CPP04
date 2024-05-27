@@ -10,7 +10,7 @@ Cat::Cat()
 
 Cat::Cat(Cat &copy)
 {
-	*this = copy;
+	_brain = new Brains(*copy._brain);
 	std::cout << GRN << this->getType() << NRM << " gets cloned!" << std::endl;
 }
 
@@ -19,6 +19,8 @@ Cat& Cat::operator=(const Cat &values)
 	if (this != &values)
 	{
 		this->type = values.type;
+		if (this->_brain)
+			delete _brain;
 		this->_brain = new Brains(*(values._brain));
 	}
 	return(*this);
