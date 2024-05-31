@@ -8,8 +8,8 @@
 int main()
 {
 	Dog *one = new Dog();
-	Dog *two = new Dog();
-	*two = *one; // will make a deep copy
+	Dog *two = new Dog(*one);
+	//*two = *one; // will make a deep copy
 	std::cout << &one << "    " << &two << std::endl;
 	std::cout << &one->_brain << "    " << &two->_brain << std::endl;
 	delete one;

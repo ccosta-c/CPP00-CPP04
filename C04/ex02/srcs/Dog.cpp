@@ -15,14 +15,16 @@ Dog::Dog(Dog &copy)
 }
 
 Dog& Dog::operator=(const Dog &values)
-{
-	if (this != &values)
-	{
+		{
+	if (this != &values) {
 		this->type = values.type;
-
+		if (this->_brain)
+			delete _brain;
+		this->_brain = new Brains(*(values._brain));
 	}
-	return(*this);
+	return (*this);
 }
+
 
 Dog::~Dog()
 {
