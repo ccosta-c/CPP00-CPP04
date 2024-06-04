@@ -1,15 +1,16 @@
 
-#include "../headers/Bureaucrat.hpp"
 #include "../headers/Form.hpp"
+#include "../headers/Bureaucrat.hpp"
 
 int	main()
 {
+	// MAKE MORE TESTS
 	try
 	{
-		Bureaucrat Joaquim("Joaquim", 76);
+		Bureaucrat Joaquim("Joaquim", 75);
 		Form WeddingForm("Wedding Form", 75, 75);
 		std::cout << WeddingForm;
-		WeddingForm.BeSigned(Joaquim);
+		Joaquim.signForm(WeddingForm);
 	}
 	catch(std::exception& e)
 	{

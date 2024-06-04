@@ -1,16 +1,19 @@
 
 #ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-#include <string>
-#include <iostream>
-#include <exception>
+# include <string>
+# include <iostream>
+# include <exception>
+# include "Form.hpp"
 
 # define RED "\033[1;31m"
 # define NRM "\033[0m"
 # define GRN "\033[1;32m"
 # define BLD "\033[1;37m"
 # define CYAN "\033[1;36m"
+
+class Form;
 
 class Bureaucrat {
   private:
@@ -27,6 +30,7 @@ class Bureaucrat {
 	int getGrade() const;
 	void incrementGrade(int ammount);
 	void decrementGrade(int ammount);
+	void signForm(Form& form);
 
   class GradeTooHighException : public std::exception
   {

@@ -45,12 +45,12 @@ int Form::getRequiredExecGrade() const {
 	return(_requiredExecGrade);
 }
 
-void Form::BeSigned(Bureaucrat &bureaucrat)
+void Form::BeSigned(Bureaucrat& name)
 {
-	if(bureaucrat.getGrade() <= this->getRequiredSignGrade()) {
+	if(name.getGrade() <= this->getRequiredSignGrade()) {
 		this->_isItSigned = true;
 	}
-	if(bureaucrat.getGrade() > this->getRequiredSignGrade())
+	if(name.getGrade() > this->getRequiredSignGrade())
 		throw GradeTooLowException();
 }
 
