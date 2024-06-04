@@ -10,7 +10,7 @@ Cat::Cat()
 
 Cat::Cat(Cat &copy)
 {
-	*this = copy;
+	_brain = new Brains(*copy.getBrain());
 	std::cout << GRN << this->getType() << NRM << " gets cloned!" << std::endl;
 }
 
@@ -19,7 +19,9 @@ Cat& Cat::operator=(const Cat &values)
 	if (this != &values)
 	{
 		this->type = values.type;
-		this->_brain = new Brains(*(values._brain));
+		if (this->_brain)
+			delete _brain;
+		this->_brain = new Brains(*(values.getBrain()));
 	}
 	return(*this);
 }
@@ -38,4 +40,9 @@ std::string Cat::getType() const
 void Cat::makeSound() const
 {
 	std::cout << "* Miau Miau *" << std::endl;
+}
+
+Brains *Cat::getBrain() const
+{
+	return(this->_brain);
 }
