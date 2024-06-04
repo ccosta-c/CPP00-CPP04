@@ -19,17 +19,19 @@ class Bureaucrat {
 	std::string getName() const;
 
 	int getGrade() const;
-
+	void incrementGrade(int ammount);
+	void decrementGrade(int ammount);
 
   class GradeTooHighException : public std::exception
   {
 	public:
-	  virtual const char * what() const throw()
+	  virtual const char *what() const throw()
 	  {
 		  return ("Bureaucrat grade is too high!");
 	  }
   };
-	class GradeTooLowException : public std::exception {
+	class GradeTooLowException : public std::exception
+	{
 	  public:
 		virtual const char *what() const throw()
 		{

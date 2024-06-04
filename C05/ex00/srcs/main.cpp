@@ -1,11 +1,45 @@
 
 #include "../headers/Bureaucrat.hpp"
 
-int main(void)
+int	main()
 {
-	Bureaucrat Joaquim("joaquim", 0);
+	try {
+		Bureaucrat Ramiro("Ramiro", 547);
+		Ramiro.incrementGrade(3);
+		std::cout << Ramiro;
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	Bureaucrat Antonio(Joaquim);
+	try {
+		Bureaucrat Alfredo("Alfredo", -547);
+		Alfredo.incrementGrade(3);
+		std::cout << Alfredo;
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	std::cout << Joaquim;
+	try {
+		Bureaucrat Lurdes("Lurdes", 50);
+		Lurdes.incrementGrade(49);
+		std::cout << Lurdes;
+		Bureaucrat Carminda(Lurdes);
+		Lurdes.decrementGrade(57);
+		std::cout << Carminda;
+		std::cout << Lurdes;
+		Lurdes = Carminda;
+		std::cout << Carminda;
+		std::cout << Lurdes;
+		Carminda.decrementGrade(100);
+		Lurdes.incrementGrade(200);
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	return (0);
 }

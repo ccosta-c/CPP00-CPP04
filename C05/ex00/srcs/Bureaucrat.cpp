@@ -10,13 +10,13 @@
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 {
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 	_name = name;
 	_grade = grade;
-	if (grade < 1)
-		throw GradeTooLowException();
-	if (grade > 150)
-		throw GradeTooHighException();
-	std::cout << "Constructed Bureaucrat " << GRN << _name << NRM << " with the grade " << GRN << _grade << NRM << std::endl;
+	std::cout << "Constructed Bureaucrat " << GRN << _name << NRM << " with the grade " << CYAN << _grade << NRM << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &copy)
@@ -37,7 +37,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &values)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destructed Bureaucrat " << GRN << _name << NRM << std::endl;
+	std::cout << RED << "Destructed Bureaucrat " << GRN << _name << NRM << std::endl;
 }
 
 std::string Bureaucrat::getName() const
@@ -50,8 +50,47 @@ int Bureaucrat::getGrade() const
 	return(_grade);
 }
 
+void Bureaucrat::incrementGrade(int ammount) {
+		if (_grade - ammount < 1)
+		{
+			std::cout << RED << "INVALID INCREMENT! Attempted to increment Bureaucrat's Grade " GRN << _name << NRM << " by "
+					  << CYAN << ammount << NRM << " to the total of " << CYAN << _grade - ammount << NRM << std::endl;
+			throw GradeTooHighException();
+		}
+		if (_grade - ammount > 150)
+		{
+			std::cout << RED << "INVALID INCREMENT! Attempted to increment Bureaucrat's Grade " GRN << _name << NRM
+					  << " by "
+					  << CYAN << ammount << NRM << " to the total of " << CYAN << _grade - ammount << NRM << std::endl;
+			throw GradeTooLowException();
+		}
+		_grade -= ammount;
+		std::cout << "Bureaucrat " GRN << _name << NRM << " incremented by "
+		<< CYAN << ammount << NRM << " to the total of " << CYAN << _grade << NRM << std::endl;
+}
+
+void Bureaucrat::decrementGrade(int ammount) {
+	if (_grade + ammount < 1)
+	{
+		std::cout << RED << "INVALID DECREMENT! Attempted to decrement Bureaucrat's Grade " GRN << _name << NRM << " by "
+				  << CYAN << ammount << NRM << " to the total of " << CYAN << _grade + ammount << NRM << std::endl;
+		throw GradeTooHighException();
+	}
+	if (_grade + ammount > 150)
+	{
+		std::cout << RED << "INVALID DECREMENT! Attempted to decrement Bureaucrat's Grade " GRN << _name << NRM << " by "
+				  << CYAN << ammount << NRM << " to the total of " << CYAN << _grade + ammount << NRM << std::endl;
+		throw GradeTooLowException();
+	}
+
+	_grade += ammount;
+	std::cout << "Bureaucrat " GRN << _name << NRM << " decremented by "
+	<< CYAN << ammount << NRM << " to the total of " << CYAN << _grade << NRM << std::endl;
+}
+
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& values)
 {
-	os << GRN << values.getName() << NRM << ", bureaucrat grade " << GRN << values.getGrade() << NRM << ".\n";
+	os << "Bureaucrat: " << GRN << values.getName() << NRM << "     Grade: "
+	<< CYAN << values.getGrade() << NRM << std::endl;
 	return (os);
 }
