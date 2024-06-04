@@ -1,12 +1,15 @@
 
 #include "../headers/Form.hpp"
 
-Form::Form() : _name("Undefined"), _isItSigned(false), _requiredSignGrade(75), _requiredExecGrade(75)
-{
+Form::Form() : _name("Undefined"), _isItSigned(false), _requiredSignGrade(75), _requiredExecGrade(75) {
 	std::cout << "Default Constructor Form " << GRN << _name << NRM << std::endl;
 }
 
 Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name), _isItSigned(false), _requiredSignGrade(gradeToSign), _requiredExecGrade(gradeToExec) {
+	if (_requiredExecGrade < 1 || _requiredSignGrade < 1)
+		throw GradeTooHighException();
+	if(_requiredExecGrade > 150 || _requiredSignGrade > 150)
+		throw GradeTooLowException();
 	std::cout << "Constructed Form " << GRN << _name << NRM << std::endl;
 }
 
@@ -40,6 +43,15 @@ int Form::getRequiredSignGrade() const {
 
 int Form::getRequiredExecGrade() const {
 	return(_requiredExecGrade);
+}
+
+void Form::BeSigned(Bureaucrat &bureaucrat)
+{
+	if(bureaucrat.getGrade() <= this->getRequiredSignGrade()) {
+		this->_isItSigned = true;
+	}
+	if(bureaucrat.getGrade() > this->getRequiredSignGrade())
+		throw GradeTooLowException();
 }
 
 std::ostream& operator<<(std::ostream& os, const Form &values)

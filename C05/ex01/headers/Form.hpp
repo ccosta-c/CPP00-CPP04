@@ -29,13 +29,14 @@ class Form {
 	bool getState() const;
 	int getRequiredSignGrade() const;
 	int getRequiredExecGrade() const;
+	void BeSigned(Bureaucrat& bureaucrat);
 
 	class GradeTooHighException : public std::exception
 	{
 	  public:
 		virtual const char *what() const throw()
 		{
-			return ("Form grade is too high!");
+			return ("Grade is too high!");
 		}
 	};
 	class GradeTooLowException : public std::exception
@@ -43,7 +44,7 @@ class Form {
 	  public:
 		virtual const char *what() const throw()
 		{
-			return ("Form grade is too low!");
+			return ("Grade is too low!");
 		}
 	};
 };

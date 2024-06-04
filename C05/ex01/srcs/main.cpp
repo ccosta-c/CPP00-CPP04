@@ -4,7 +4,15 @@
 
 int	main()
 {
-	Bureaucrat Joaquim("Joaquim", 75);
-	Form WeddingForm("Wedding Form", 75, 75);
-	std::cout << WeddingForm;
+	try
+	{
+		Bureaucrat Joaquim("Joaquim", 76);
+		Form WeddingForm("Wedding Form", 75, 75);
+		std::cout << WeddingForm;
+		WeddingForm.BeSigned(Joaquim);
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
