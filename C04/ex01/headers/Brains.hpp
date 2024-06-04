@@ -12,9 +12,9 @@
 
 class Brains
 {
-  public:
+  private:
 	std::string ideas[100];
-
+  public:
 	Brains();
 	Brains(Brains &copy);
 	Brains &operator=(const Brains &values);

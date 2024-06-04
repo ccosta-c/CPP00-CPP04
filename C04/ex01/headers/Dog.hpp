@@ -7,15 +7,17 @@
 
 class Dog : public Animal
 {
+  private:
+	Brains *_brain;
   public:
 	Dog();
 	Dog(Dog &copy);
 	Dog &operator=(const Dog &values);
 	virtual ~Dog();
+
 	std::string getType() const;
 	void makeSound() const;
-
-	Brains *_brain;
+	Brains *getBrain() const;
 };
 
 #endif

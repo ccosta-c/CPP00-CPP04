@@ -11,7 +11,7 @@ int main()
 	Dog *two = new Dog();
 	*two = *one; // will make a deep copy
 	std::cout << &one << "    " << &two << std::endl;
-	std::cout << &one->_brain << "    " << &two->_brain << std::endl;
+	std::cout << one->getBrain() << "    " << two->getBrain() << std::endl;
 	delete one;
 	delete two;
 

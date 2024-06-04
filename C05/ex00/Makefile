@@ -37,9 +37,9 @@ OBJ_DIR = ./objs/
 HEADERS = -I ./headers/
 
 #====================================FILES======================================
-SRC				= 	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brains.cpp
+SRC				= 	main.cpp Bureaucrat.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= Abstract
+NAME			= Bureaucrats
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
 COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 
@@ -55,7 +55,7 @@ $(NAME): $(COBJS)
 	echo " | |  | | ___  _ __   ___| |";
 	echo " | |  | |/ _ \| '_ \ / _ \ |";
 	echo " | |__| | (_) | | | |  __/_|";
-	echo " |_____/ \___/|_| |_|\___(_)";
+	echo " |_____/ \___/|_| |_|\___(_)$(RESET)";
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
 	echo "[$(CYAN)Compiling$(RESET)] $(CXXFLAGS) $(GREEN)$<$(RESET)"
