@@ -26,11 +26,12 @@ class Bureaucrat {
 
 	Bureaucrat& operator=(const Bureaucrat &values);
 	std::string getName() const;
-
 	int getGrade() const;
+
 	void incrementGrade(int ammount);
 	void decrementGrade(int ammount);
 	void signForm(AForm& form);
+	void executeForm(AForm const& form);
 
   class GradeTooHighException : public std::exception
   {

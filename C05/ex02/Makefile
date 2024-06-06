@@ -37,9 +37,10 @@ OBJ_DIR = ./objs/
 HEADERS = -I ./headers/
 
 #====================================FILES======================================
-SRC				= 	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+SRC				= 	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+					RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= AForms
+NAME			= MoreForms
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
 COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 

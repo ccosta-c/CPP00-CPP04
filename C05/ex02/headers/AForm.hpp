@@ -25,13 +25,14 @@ class AForm {
 	AForm();
 	AForm(std::string name, int gradeToSign, int gradeToExec);
 	AForm(AForm &copy);
-	AForm &operator=(const AForm &values);
 	virtual ~AForm();
 
+	AForm &operator=(const AForm &values);
 	std::string getName() const;
 	bool getState() const;
 	int getRequiredSignGrade() const;
 	int getRequiredExecGrade() const;
+
 	virtual void BeSigned(Bureaucrat& name);
 	virtual void execute(Bureaucrat const & executor) const = 0;
 
