@@ -49,6 +49,7 @@ void AForm::BeSigned(Bureaucrat& name)
 {
 	if(name.getGrade() <= this->getRequiredSignGrade()) {
 		this->_isItSigned = true;
+		std::cout << GRN << "Form " << _name << " was signed successfully!" << NRM << std::endl;
 	}
 	if(name.getGrade() > this->getRequiredSignGrade())
 		throw GradeTooLowException();

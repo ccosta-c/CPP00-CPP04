@@ -46,6 +46,14 @@ class ShrubberyCreationForm : public AForm {
 			return ("Grade is too low!");
 		}
 	};
+	class NotSignedException : public std::exception
+	{
+	  public:
+		virtual const char *what() const throw()
+		{
+			return ("The form is not signed!");
+		}
+	};
 };
 
 std::ostream& operator<<(std::ostream& os, const ShrubberyCreationForm &values);

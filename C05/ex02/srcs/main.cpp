@@ -9,6 +9,8 @@ int	main()
 	{
 		Bureaucrat Joaquim("Joaquim", 75);
 		ShrubberyCreationForm Tree;
+		Tree.BeSigned(Joaquim);
+		Tree.execute(Joaquim);
 	}
 	catch(std::exception& e)
 	{
