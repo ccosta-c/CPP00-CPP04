@@ -2,13 +2,14 @@
 #include "../headers/AForm.hpp"
 #include "../headers/Bureaucrat.hpp"
 #include "../headers/ShrubberyCreationForm.hpp"
+#include "../headers/RobotomyRequestForm.hpp"
 
 int	main()
 {
 	try
 	{
-		Bureaucrat Joaquim("Joaquim", 75);
-		ShrubberyCreationForm Tree;
+		Bureaucrat Joaquim("Joaquim", 2);
+		RobotomyRequestForm Tree("test");
 		Tree.BeSigned(Joaquim);
 		Tree.execute(Joaquim);
 	}
