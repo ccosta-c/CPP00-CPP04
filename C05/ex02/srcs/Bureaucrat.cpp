@@ -81,7 +81,7 @@ void Bureaucrat::decrementGrade(int ammount) {
 	<< CYAN << ammount << NRM << " to the total of " << CYAN << _grade << NRM << std::endl;
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
 	if (form.getState()) {
 		std::cout << "The form is already signed!" << std::endl;
 		return ;

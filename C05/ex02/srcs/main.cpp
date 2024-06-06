@@ -1,16 +1,14 @@
 
-#include "../headers/Form.hpp"
+#include "../headers/AForm.hpp"
 #include "../headers/Bureaucrat.hpp"
+#include "../headers/ShrubberyCreationForm.hpp"
 
 int	main()
 {
 	try
 	{
 		Bureaucrat Joaquim("Joaquim", 75);
-		Form WeddingForm("Wedding Form", 150, 0);
-		std::cout << WeddingForm;
-		Joaquim.decrementGrade(1);
-		Joaquim.signForm(WeddingForm);
+		ShrubberyCreationForm Tree;
 	}
 	catch(std::exception& e)
 	{

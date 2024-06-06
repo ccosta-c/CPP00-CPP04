@@ -7,6 +7,7 @@ Brains::Brains()
 	{
 		ideas[i] = "ola";
 	}
+	std::cout << GRN << "Brain" << NRM << " has been created." << std::endl;
 }
 
 Brains::Brains(Brains &copy)
@@ -28,4 +29,5 @@ Brains& Brains::operator=(const Brains &values)
 
 Brains::~Brains()
 {
+	std::cout << GRN << "Brain" << NRM << " has been destroyed." << std::endl;
 }
