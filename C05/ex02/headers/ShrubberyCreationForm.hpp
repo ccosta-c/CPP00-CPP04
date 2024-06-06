@@ -4,6 +4,7 @@
 
 # include <string>
 # include <iostream>
+# include <fstream>
 # include <exception>
 # include <unistd.h>
 # include "Bureaucrat.hpp"
@@ -18,12 +19,16 @@ class Bureaucrat;
 
 class ShrubberyCreationForm : public AForm {
   private:
-	std::string target;
+	std::string _target;
   public:
 	ShrubberyCreationForm();
+	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(ShrubberyCreationForm &copy);
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &values);
 	~ShrubberyCreationForm();
+
+	std::string getTarget() const;
+	void execute(Bureaucrat const & executor) const;
 
 	class GradeTooHighException : public std::exception
 	{
