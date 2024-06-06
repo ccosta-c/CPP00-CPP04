@@ -1,12 +1,12 @@
 
 #include "../headers/RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequest",72,45) {
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request",72,45) {
 	_target = "Generic";
 	std::cout << "Default Constructor Form " << GRN << this->getName() << NRM << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequest",72,45) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy Request",72,45) {
 	this->_target = target;
 	std::cout << "Constructor Form " << GRN << this->getName() << NRM << " Target: " << this->_target << std::endl;
 }
@@ -51,7 +51,6 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 	std::cout << "]" << GRN << "  ROBOTOMY COMPLETED!" << BLD << std::endl;
 
 	number = rand() % 100;
-	std::cout << number;
 	if (number >= 50)
 		std::cout << GRN << "ROBOTOMY PERFORMED SUCCESSFULLY ON " << CYAN << _target << BLD << "!" << std::endl;
 	else
