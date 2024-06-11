@@ -6,7 +6,7 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon",2
 	std::cout << "Default Constructor Form " << GRN << this->getName() << NRM << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Presidential Form",25,5) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Presidential Pardon",25,5) {
 	this->_target = target;
 	std::cout << "Constructor Form " << GRN << this->getName() << NRM << " Target: " << this->_target << std::endl;
 }

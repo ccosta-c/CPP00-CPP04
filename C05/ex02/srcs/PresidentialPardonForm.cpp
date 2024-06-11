@@ -1,12 +1,12 @@
 
 #include "../headers/PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("Robotomy Request",72,45) {
+PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon",25,5) {
 	_target = "Generic";
 	std::cout << "Default Constructor Form " << GRN << this->getName() << NRM << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Robotomy Request",72,45) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Presidential Pardon",25,5) {
 	this->_target = target;
 	std::cout << "Constructor Form " << GRN << this->getName() << NRM << " Target: " << this->_target << std::endl;
 }

@@ -27,7 +27,7 @@ class Intern {
 	  public:
 		virtual const char *what() const throw()
 		{
-			return ("Form not found");
+			return ("Form not found!");
 		}
 	};
 };

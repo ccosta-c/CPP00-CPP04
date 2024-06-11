@@ -20,7 +20,7 @@ int	main()
 		Claudio.executeForm(*Robot);
 		delete Robot;
 		sleep(5);
-		AForm *USA = new PresidentialPardonForm("Trump");
+		AForm *USA = new PresidentialPardonForm("Marcelo");
 		Claudio.incrementGrade(41);
 		Claudio.signForm(*USA);
 		Claudio.executeForm(*USA);

@@ -8,13 +8,12 @@
 # define BLD "\033[1;37m"
 # define CYAN "\033[1;36m"
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
 		throw GradeTooLowException();
-	_name = name;
 	_grade = grade;
 	std::cout << "Constructed Bureaucrat " << GRN << _name << NRM << " with the grade " << CYAN << _grade << NRM << std::endl;
 }
@@ -28,10 +27,7 @@ Bureaucrat::Bureaucrat(Bureaucrat &copy)
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &values)
 {
 	if(this != &values)
-	{
-		this->_name =values._name;
 		this->_grade =values._grade;
-	}
 	return(*this);
 }
 
