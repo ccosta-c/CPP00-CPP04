@@ -88,7 +88,7 @@ void Bureaucrat::signForm(Form &form) {
 	}
 	try {
 		form.BeSigned(*this);
-		std::cout << "Bureaucrat " << GRN << this->_name << NRM << " signed the " << form.getName() << std::endl;
+		std::cout << "Bureaucrat " << GRN << this->_name << NRM << " signed the " << form.getName() << "!" << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cerr << "Bureaucrat " << GRN << this->_name << NRM << " couldn’t sign the " << form.getName()

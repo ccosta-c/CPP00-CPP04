@@ -4,7 +4,7 @@
 int	main()
 {
 	try {
-		Bureaucrat Ramiro("Ramiro", 547);
+		Bureaucrat Ramiro("Ramiro", 151);
 		Ramiro.incrementGrade(3);
 		std::cout << Ramiro;
 	}
@@ -14,7 +14,7 @@ int	main()
 	}
 
 	try {
-		Bureaucrat Alfredo("Alfredo", -547);
+		Bureaucrat Alfredo("Alfredo", 0);
 		Alfredo.incrementGrade(3);
 		std::cout << Alfredo;
 	}
