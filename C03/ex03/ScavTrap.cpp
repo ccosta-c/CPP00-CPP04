@@ -13,9 +13,9 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap()
 ScavTrap::ScavTrap()
 {
 	_name = "NULL";
-	_hitPoints = 0;
-	_energyPoints = 0;
-	_attackDamage = 0;
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
 	std::cout << "New model of a " << GRN << " Scavtrap " << NRM << "has appeared!" << std::endl;
 }
 

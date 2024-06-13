@@ -4,9 +4,9 @@
 FragTrap::FragTrap()
 {
 	_name = "NULL";
-	_hitPoints = 0;
-	_energyPoints = 0;
-	_attackDamage = 0;
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_attackDamage = 30;
 	std::cout << "New model of a " << GRN << " FragTrap " << NRM << "has appeared!" << std::endl;
 }
 
