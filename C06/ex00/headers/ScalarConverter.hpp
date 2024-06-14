@@ -13,7 +13,9 @@
 class ScalarConverter {
   private:
 	ScalarConverter();
+	ScalarConverter(ScalarConverter& copy);
 	~ScalarConverter();
+	ScalarConverter &operator=(const ScalarConverter &values);
   public:
 	static void convert(std::string& data);
 	static bool checkChar(std::string& data);
