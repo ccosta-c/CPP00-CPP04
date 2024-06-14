@@ -1,19 +1,13 @@
 
 #include "../headers/ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter() {
-}
+ScalarConverter::ScalarConverter() {}
 
-ScalarConverter::~ScalarConverter() {
-}
+ScalarConverter::~ScalarConverter() {}
 
-ScalarConverter::ScalarConverter(ScalarConverter &copy) {
+ScalarConverter::ScalarConverter(ScalarConverter &copy) {}
 
-}
-
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &values) {
-
-}
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &values) {}
 
 void ScalarConverter::convert(std::string& data) {
 	if(checkInt(data))

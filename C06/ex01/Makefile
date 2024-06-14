@@ -37,7 +37,7 @@ OBJ_DIR = ./objs/
 HEADERS = -I ./headers/
 
 #====================================FILES======================================
-SRC				= 	main.cpp
+SRC				= 	main.cpp Serializer.cpp
 OBJS 			:= $(SRC:.cpp=.o)
 NAME			= Serializer
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
