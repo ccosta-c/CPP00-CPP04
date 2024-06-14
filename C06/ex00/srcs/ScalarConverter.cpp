@@ -18,7 +18,6 @@ void ScalarConverter::convert(std::string& data) {
 		DoubleConversion(data);
 	else {
 		checkSpecials(data);
-		std::cout << RED << "Conversion Impossible" << std::endl;
 	}
 }
 bool ScalarConverter::checkChar(std::string& data) {
@@ -70,7 +69,7 @@ bool ScalarConverter::checkFloat(std::string& data) {
 
 bool ScalarConverter::checkDouble(std::string& data) {
 
-		bool checkDot;
+		bool checkDot = false;
 
 		if (!(isdigit(data[0]) || data[0] == 45))
 			return (false);
@@ -153,5 +152,22 @@ void ScalarConverter::DoubleConversion(std::string &data) {
 }
 
 void ScalarConverter::checkSpecials(std::string &data) {
-	(void) data;
+	std::string array[6] = {"-inf", "+inf", "nan", "-inff", "+inff", "nanf"};
+
+	for (int i = 0; i < 6; ++i) {
+		if(!data.compare(array[i])) {
+			std::cout << "char: " << RED << "Impossible" << NRM << std::endl;
+			std::cout << "int: " << RED << "Impossible" << NRM << std::endl;
+			if (i <= 2) {
+				std::cout << "float: " << CYAN << array[i] << NRM << std::endl;
+				std::cout << "double: " << CYAN << array[i + 3] << NRM << std::endl;
+			}
+			else {
+				std::cout << "float: " << CYAN << array[i - 3] << NRM << std::endl;
+				std::cout << "double: " << CYAN << array[i] << NRM << std::endl;
+			}
+			return ;
+		}
+	}
+	std::cout << RED << "Conversion Impossible" << NRM << std::endl;
 }
