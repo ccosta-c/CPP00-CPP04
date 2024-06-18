@@ -8,5 +8,5 @@ int main(int argc, char **argv)
 		ScalarConverter::convert(nanf);
 	}
 	else
-		std::cout << RED << "Please provide one argument." << std::endl;
+		std::cout << RED << "Please provide one argument." << NRM << std::endl;
 }

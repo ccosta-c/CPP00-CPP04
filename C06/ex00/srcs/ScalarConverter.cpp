@@ -5,9 +5,14 @@ ScalarConverter::ScalarConverter() {}
 
 ScalarConverter::~ScalarConverter() {}
 
-ScalarConverter::ScalarConverter(ScalarConverter &copy) {}
+ScalarConverter::ScalarConverter(ScalarConverter &copy) {
+	(void) copy;
+}
 
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &values) {}
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &values) {
+	(void) values;
+	return (*this);
+}
 
 void ScalarConverter::convert(std::string& data) {
 	if(checkInt(data))
@@ -33,10 +38,11 @@ bool ScalarConverter::checkChar(std::string& data) {
 
 bool ScalarConverter::checkInt(std::string &data) {
 	long int nbr = strtol(data.c_str(), NULL, 10);
-
 	if (nbr == 0 && data[0] != '0')
 		return (false);
-	for ( unsigned long it = 0; it < data.length(); ++it) {
+	if (!(isdigit(data[0]) || data[0] == 45))
+		return (false);
+	for ( unsigned long it = 1; it < data.length(); ++it) {
 		if (!isdigit(data[it]))
 			return (false);
 	}
@@ -47,7 +53,7 @@ bool ScalarConverter::checkInt(std::string &data) {
 
 bool ScalarConverter::checkFloat(std::string& data) {
 
-		bool checkDot;
+		bool checkDot = false;
 
 		if (!(isdigit(data[0]) || data[0] == 45))
 			return (false);
