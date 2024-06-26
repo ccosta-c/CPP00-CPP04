@@ -47,7 +47,6 @@ template <class T> T& Array<T>::operator[](unsigned int i) {
 }
 
 template <class T> Array<T>& Array<T>::operator=(T& data) {
-	std::cout << "equal overload is being called" << std::endl;
 	if(this != data) {
 		delete[] elements;
 		_size = data.size();
