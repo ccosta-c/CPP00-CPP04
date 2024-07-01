@@ -40,6 +40,6 @@ class Bureaucrat {
 	};
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat &values);
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& values);
 
 #endif

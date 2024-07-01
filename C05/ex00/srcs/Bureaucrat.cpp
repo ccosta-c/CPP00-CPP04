@@ -84,8 +84,7 @@ void Bureaucrat::decrementGrade(int ammount) {
 	<< CYAN << ammount << NRM << " to the total of " << CYAN << _grade << NRM << std::endl;
 }
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& values)
-{
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& values) {
 	os << "Bureaucrat: " << GRN << values.getName() << NRM << "     Grade: "
 	<< CYAN << values.getGrade() << NRM << std::endl;
 	return (os);
