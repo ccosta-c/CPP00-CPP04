@@ -25,11 +25,13 @@ class Span {
 	std::vector<int>& getVector() ;
 
 	void addNumber(int num);
+
 	template <typename Ite> void addNumbersBulk(Ite first, Ite last) {
 		if ((unsigned int)std::distance(first, last) > MaximumStorage - (unsigned int)NumbersStorage.size())
 			throw ExceededMaximumStorage();
 		NumbersStorage.insert(NumbersStorage.begin(), first, last);
 	}
+
 	void randomNumbers(unsigned int quantity);
 	int shortestSpan();
 	int longestSpan();

@@ -39,7 +39,7 @@ HEADERS = -I ./headers/
 #====================================FILES======================================
 SRC				= 	main.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= EasyFind
+NAME			= MutantStack
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
 COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 
