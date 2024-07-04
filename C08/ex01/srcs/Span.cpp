@@ -40,10 +40,9 @@ int Span::shortestSpan() {
 	}
 	std::sort(NumbersStorage.begin(), NumbersStorage.end());
 	for (std::vector<int>::iterator it = NumbersStorage.begin(); it != NumbersStorage.end() - 1; ++it) {
-			tmp = std::max(*it, *(++it)) - std::min(*--it, *++it);
-			it--;
+			tmp = *++it - *--it;
 			if (tmp < shortest && tmp != 0) {
-				std::cout << std::max(*it, *(++it)) << " - " << std::min(*--it, *++it) << " = " << tmp <<std::endl;
+				std::cout << *++it << " - " << *--it << " = " << tmp <<std::endl;
 				shortest = tmp;
 			}
 	}
