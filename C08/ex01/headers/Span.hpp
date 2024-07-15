@@ -16,7 +16,7 @@ class Span {
 	std::vector<int> NumbersStorage;
   public:
 	Span();
-	Span(unsigned int N);
+	Span(int N);
 	Span(Span &copy);
 	Span &operator=(const Span &values);
 	~Span();

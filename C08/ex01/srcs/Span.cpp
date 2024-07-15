@@ -3,7 +3,12 @@
 
 Span::Span() : MaximumStorage(0) {}
 
-Span::Span(unsigned int N) : MaximumStorage(N) {}
+Span::Span(int N) {
+	if (N < 0)
+		MaximumStorage = 0;
+	else
+		MaximumStorage = N;
+}
 
 Span::Span(Span &copy) : MaximumStorage(copy.getMaximumStorage()), NumbersStorage(copy.NumbersStorage){}
 
