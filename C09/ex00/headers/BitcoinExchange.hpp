@@ -17,12 +17,14 @@
 
 class Data {
   private:
-	std::map<std::string,double> exchangeDatabase;
-	std::map<std::string,double> inputDatabase;
+	std::map<std::string,float> exchangeDatabase;
+	std::pair<std::string, float> lineData;
 
   public:
 	Data(std::ifstream& databaseFile);
 	void execute(std::ifstream& inputDatabase);
+	float toFloat(const std::string& str);
+	void checkDatabase();
 };
 
 
