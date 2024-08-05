@@ -8,12 +8,15 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
+#include <cmath>
+#include <limits>
 
 # define RED "\033[1;31m"
 # define NRM "\033[0m"
 # define GRN "\033[1;32m"
 # define BLD "\033[1;37m"
 # define CYAN "\033[1;36m"
+# define BLINK "\033[5m"
 
 class Data {
   private:
@@ -25,6 +28,7 @@ class Data {
 	void execute(std::ifstream& inputDatabase);
 	float toFloat(const std::string& str);
 	void checkDatabase();
+	bool checkDate(void);
 };
 
 
