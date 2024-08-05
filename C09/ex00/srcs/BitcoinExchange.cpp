@@ -1,12 +1,5 @@
 #include "../headers/BitcoinExchange.hpp"
 
-float Data::toFloat(const std::string& str) {
-	std::stringstream ss(str);
-	float num;
-	ss >> num;
-	return num;
-}
-
 Data::Data(std::ifstream& databaseFile){
 	std::string tmp;
 	int commaLocation;
@@ -20,6 +13,25 @@ Data::Data(std::ifstream& databaseFile){
 		exchangeDatabase.insert(std::pair<std::string,float>(tmp.substr(0, commaLocation),
 			toFloat(tmp.substr(commaLocation + 1, tmp.npos))));
 	}
+}
+
+Data::Data(Data &copy) {
+	//I'm not wasting time doing a function I will never use in this exercise.
+	(void) copy;
+}
+Data &Data::operator=(const Data &values) {
+	//I'm not wasting time doing a function I will never use in this exercise.
+	(void) values;
+	return (*this);
+}
+
+Data::~Data(void) {}
+
+float Data::toFloat(const std::string& str) {
+	std::stringstream ss(str);
+	float num;
+	ss >> num;
+	return num;
 }
 
 void Data::execute(std::ifstream& inputFile) {

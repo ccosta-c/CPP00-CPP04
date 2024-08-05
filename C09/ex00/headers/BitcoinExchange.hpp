@@ -25,6 +25,10 @@ class Data {
 
   public:
 	Data(std::ifstream& databaseFile);
+	~Data(void);
+	Data(Data& copy);
+	Data& operator=(const Data &values);
+
 	void execute(std::ifstream& inputDatabase);
 	float toFloat(const std::string& str);
 	void checkDatabase();

@@ -36,7 +36,7 @@ OBJ_DIR = ./objs/
 HEADERS = -I ./headers/
 
 #====================================FILES======================================
-SRC				= 	main.cpp
+SRC				= 	main.cpp RPN.cpp
 OBJS 			:= $(SRC:.cpp=.o)
 NAME			= RPN
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
