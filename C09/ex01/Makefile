@@ -36,9 +36,9 @@ OBJ_DIR = ./objs/
 HEADERS = -I ./headers/
 
 #====================================FILES======================================
-SRC				= 	main.cpp BitcoinExchange.cpp
+SRC				= 	main.cpp
 OBJS 			:= $(SRC:.cpp=.o)
-NAME			= btc
+NAME			= RPN
 COBJS			= $(addprefix $(OBJ_DIR), $(OBJS))
 COSRC			= $(addprefix $(SRC_DIR), $(SRC))
 
