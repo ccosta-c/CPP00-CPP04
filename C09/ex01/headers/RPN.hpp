@@ -10,7 +10,9 @@
 
 # include <stack>
 # include <iostream>
-#	include <sstream>
+# include <sstream>
+# include <string>
+# include <algorithm>
 
 class data {
   private:
@@ -21,7 +23,7 @@ class data {
 	data &operator=(const data &values);
 	~data();
 
-	void execute(char **argv);
+	void execute(std::string argv);
 	int toInt(const std::string& str);
 };
 
