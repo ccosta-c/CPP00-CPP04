@@ -7,16 +7,24 @@ PmergeMe::PmergeMe(char **argv) {
 	argv++;
 	while(*argv) {
 		tmp = toInt(*argv);
+		////////////////////////////////FIX ERROR IF NUMBERS ARE INSERTED AS ONE ARGUMENT//////////////////////////////
+		if (argv[1][0] == '"') {
+			std::cerr << RED << BLINK << "Please insert each number as an argument." << NRM << std::endl;
+			return ;
+		}
 		if (tmp < 0) {
-			std::cout << RED << BLINK << "Unexpected negative values detected." << NRM << std::endl;
+			std::cerr << RED << BLINK << "Unexpected negative values detected." << NRM << std::endl;
 			return ;
 		}
 		vStorage.push_back(tmp);
 		dStorage.push_back(tmp);
 		argv++;
 	}
-	if (vStorage.size() <= 1)
-		std::cout << RED << BLINK << "Insufficient data for sorting." << NRM << std::endl;;
+	if (vStorage.size() <= 1) {
+		std::cerr << RED << BLINK << "Insufficient data for sorting." << NRM << std::endl;
+		return ;
+	}
+	mergeSTLS();
 }
 
 void PmergeMe::mergeSTLS(void) {

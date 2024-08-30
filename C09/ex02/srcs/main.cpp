@@ -7,6 +7,5 @@ int main(int argc, char **argv)
 		std::cout << BLINK << RED << "Numbers required." << NRM << std::endl;
 	else {
 		PmergeMe data(argv);
-		data.mergeSTLS();
 	}
 }
