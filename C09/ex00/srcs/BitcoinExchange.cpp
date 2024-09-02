@@ -38,7 +38,8 @@ void Data::execute(std::ifstream& inputFile) {
 	std::string tmp;
 	int separator;
 
-	std::getline(inputFile, tmp);
+	if (tmp.find_first_of("abcdefghijklmnopqrstuvwxyz") != tmp.npos)
+		std::getline(inputFile, tmp);
 	while(true) {
 		std::getline(inputFile, tmp);
 		if (inputFile.eof())
