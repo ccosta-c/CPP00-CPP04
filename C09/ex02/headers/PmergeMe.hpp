@@ -16,6 +16,7 @@
 # include <vector>
 # include <deque>
 # include <iterator>
+# include <limits>
 
 class PmergeMe {
   private:

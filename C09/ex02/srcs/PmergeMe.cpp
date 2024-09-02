@@ -5,15 +5,15 @@ PmergeMe::PmergeMe(char **argv) {
 	int tmp;
 
 	argv++;
+	std::string tmpstr(*argv);
+	if(tmpstr.find_first_of(" ") != tmpstr.npos) {
+		std::cerr << RED << BLINK << "Please insert each number as an argument." << NRM << std::endl;
+		return ;
+	}
 	while(*argv) {
 		tmp = toInt(*argv);
-		////////////////////////////////FIX ERROR IF NUMBERS ARE INSERTED AS ONE ARGUMENT//////////////////////////////
-		if (argv[1][0] == '"') {
-			std::cerr << RED << BLINK << "Please insert each number as an argument." << NRM << std::endl;
-			return ;
-		}
 		if (tmp < 0) {
-			std::cerr << RED << BLINK << "Unexpected negative values detected." << NRM << std::endl;
+			std::cerr << RED << BLINK << "Unexpected negative values detected or overflow." << NRM << std::endl;
 			return ;
 		}
 		vStorage.push_back(tmp);
@@ -118,6 +118,9 @@ int PmergeMe::toInt(const std::string& str) {
 	std::stringstream ss(str);
 	int num;
 	ss >> num;
+	if (num == std::numeric_limits<int>::max() && str != "2147483647") {
+		num = -2147483648;
+	}
 	return (num);
 }
 
