@@ -3,7 +3,7 @@
 
 int main(int argc, char **argv) {
 	if (argc != 2) {
-		std::cout << BLINK << RED << "ERROR: Not enough arguments!" << NRM << std::endl;
+		std::cerr << BLINK << RED << "ERROR: Not enough arguments!" << NRM << std::endl;
 		return (-1);
 	}
 	data one;

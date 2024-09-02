@@ -61,15 +61,15 @@ void Data::checkDatabase() {
 	std::map<std::string,float>::iterator it;
 
 	if (!checkDate()) {
-		std::cout << BLINK << RED << "Error: Invalid Date! ====> " << lineData.first << NRM << std::endl;
+		std::cerr << BLINK << RED << "Error: Invalid Date! ====> " << lineData.first << NRM << std::endl;
 		return ;
 	}
 	if (lineData.second < 0) {
-		std::cout << BLINK << RED << "Error: Not a positive number! ====> " << lineData.second << NRM << std::endl;
+		std::cerr << BLINK << RED << "Error: Not a positive number! ====> " << lineData.second << NRM << std::endl;
 		return ;
 	}
 	if ((long)lineData.second > std::numeric_limits<int>::max()) {
-		std::cout << BLINK << RED << "Error: Too large a number! ====> " << (long)lineData.second << NRM << std::endl;
+		std::cerr << BLINK << RED << "Error: Too large a number! ====> " << (long)lineData.second << NRM << std::endl;
 		return ;
 	}
 	if (!std::isnan(lineData.second)) {
