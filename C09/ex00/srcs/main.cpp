@@ -9,10 +9,14 @@ int main (int argc, char **argv)
 
 		inputFile.open(argv[1], std::ifstream::in);
 		databaseFile.open("data.csv", std::ifstream::in);
-		if (!databaseFile)
+		if (!databaseFile) {
 			std::cout << RED << "Database not found!" << NRM << std::endl;
-		if (!inputFile)
+			return (1);
+		}
+		if (!inputFile) {
 			std::cout << RED << "Input File not found!" << NRM << std::endl;
+			return (1);
+		}
 		Data test(databaseFile);
 		databaseFile.close();
 		test.execute(inputFile);

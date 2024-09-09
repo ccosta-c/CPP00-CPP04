@@ -4,7 +4,7 @@ Data::Data(std::ifstream& databaseFile){
 	std::string tmp;
 	int commaLocation;
 
-	std::getline(databaseFile, tmp);
+	//std::getline(databaseFile, tmp);
 	while(true) {
 		std::getline(databaseFile, tmp);
 		if (databaseFile.eof())
@@ -16,11 +16,9 @@ Data::Data(std::ifstream& databaseFile){
 }
 
 Data::Data(Data &copy) {
-	//I'm not wasting time doing a function I will never use in this exercise.
 	(void) copy;
 }
 Data &Data::operator=(const Data &values) {
-	//I'm not wasting time doing a function I will never use in this exercise.
 	(void) values;
 	return (*this);
 }
@@ -38,8 +36,6 @@ void Data::execute(std::ifstream& inputFile) {
 	std::string tmp;
 	int separator;
 
-	if (tmp.find_first_of("abcdefghijklmnopqrstuvwxyz") != tmp.npos)
-		std::getline(inputFile, tmp);
 	while(true) {
 		std::getline(inputFile, tmp);
 		if (inputFile.eof())
