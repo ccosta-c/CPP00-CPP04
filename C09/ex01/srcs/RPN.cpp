@@ -25,9 +25,18 @@ void data::execute(std::string str) {
 				std::cerr << BLINK << RED << "ERROR" << NRM << std::endl;
 				return ;
 			}
-			if (tmp.find_first_not_of("0123456789") == tmp.npos)
+			if (tmp.find_first_of("0123456789") != tmp.npos) {
+				if (tmp.find_first_of("+-*/") != tmp.npos) {
+					std::cerr << BLINK << RED << "ERROR" << NRM << std::endl;
+					return;
+				}
 				storage.push(toInt(tmp));
+			}
 			if (tmp.find_first_of("+-*/") != tmp.npos && tmp.length() == 1) {
+				if (storage.size() < 2) {
+					std::cerr << BLINK << RED << "ERROR" << NRM << std::endl;
+					return;
+				}
 				int one = storage.top();
 				storage.pop();
 				int two = storage.top();
