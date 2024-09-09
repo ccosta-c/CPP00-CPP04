@@ -32,7 +32,11 @@ void data::execute(std::string str) {
 				}
 				storage.push(toInt(tmp));
 			}
-			if (tmp.find_first_of("+-*/") != tmp.npos && tmp.length() == 1) {
+			if (tmp.find_first_of("+-*/") != tmp.npos) {
+				if (tmp.length() != 1) {
+					std::cerr << BLINK << RED << "ERROR" << NRM << std::endl;
+					return;
+				}
 				if (storage.size() < 2) {
 					std::cerr << BLINK << RED << "ERROR" << NRM << std::endl;
 					return;
